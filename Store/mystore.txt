@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>Product filter</title>
+<style>
+*
+{
+margin:0;
+padding:0px;
+box-sizing: border-box;
+font-family:'Poppin',sans-serif;
+}
+
+section
+{
+padding:20px;
+width:1280px;
+marging:40px auto;
+}
+
+section ul{
+display: flex;
+margin-bottom:10px;
+}
+
+section ul li{
+list-style:none;
+back-ground:#eee;
+padding:8px 20px;
+letter-spacing: 1px;
+cursor:pointer;
+}
+
+section ul li.active
+{
+background:#03a9f4;
+color:#fff;
+}
+
+.product
+{
+diplay: flex;
+flex-wrap:wrap;
+}
+.product .itemBox
+{
+position:relative;
+width:300px;
+height: 300px;
+margin:5px;
+}
+
+.product .itemBox img{
+positon: absolute;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+</style>
+</head>
+<body>
+<section>
+<ul>
+<li class="list active" data-filter="all">All</li>
+<li class="list" data-filter="cakes">Cakes</li>
+<li class="list" data-filter="cupcakes">Cupcakes</li>
+<li class="list" data-filter="doughnuts">Doughnuts</li>
+</ul>
+<div class="product">
+<div class="itemBox cake"><img src="cake1.JPG" alt="cake1" style="width:200px"/></div>
+<div class="itemBox cake"><img src="cake2.JPG" alt="cake2" style="width:200px"/></div>
+<div class="itemBox cake"><img src="cake3.JPG" alt="cake3" style="width:200px"/></div>
+<div class="itemBox cupcakes"><img src="cupcakes1.JPG" alt="cupcakes1" style="width:200px"/></div>
+<div class="itemBox cupcakes"><img src="cupcakes2.JPG" alt="cupcakes2" style="width:200px"/></div>
+<div class="itemBox doughnuts"><img src="doughnut1.JPG" alt="doughnuts1" style="width:200px"/></div>
+<div class="itemBox doughnuts"><img src="doughnut2.JPG" alt="doughnuts2" style="width:200px"/></div>
+<div class="itemBox cake"><img src="cake4.JPG" alt="cake4" style="width:200px"/></div>
+<div class="itemBox doughnuts"><img src="doughnut3.JPG" alt="doughnuts3" style="width:200px"/></div>
+</div>
+</body>
+</html>

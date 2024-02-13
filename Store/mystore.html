@@ -1,0 +1,106 @@
+<html>
+<head>
+<title>Product filter</title>
+<style>
+#import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+margin:0px;
+padding:0px;
+box-sizing:border-box;
+}
+section
+{
+padding:20px;
+width:1000px;
+margin:30px ;
+}
+ section ul{
+display: flex;
+margin-bottom:10px;
+
+}
+ section ul li
+{
+list-style:none;
+background:#eee;
+padding:8px 20px;
+margin: 5px;
+letter-spacing:1px;
+cursor:pointer;
+
+}
+section ul li.active
+{
+background:#03a9f4;
+color:#fff;
+}
+.product{
+display:flex;
+flex-wrap:wrap;
+}
+
+.product .itemBox
+{
+position:relative;
+width:270px;
+height: 230px;
+margin:1px;
+}
+
+.product .itemBox img{
+positon: absolute;
+top: 0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+</style>
+</head>
+<body>
+<center><h1> Our <span style="color:pink">STORE</style></h1>
+<section>
+<ul>
+<li class="list active" data-filter="all">All</li>
+<li class="list" data-filter="cakes">Cakes</li>
+<li class="list" data-filter="cupcakes">Cupcakes</li>
+<li class="list" data-filter="doughnuts">Doughnuts</li><br>
+</ul>
+<div class="product">
+<div class="itemBox cakes"><img src="cake1.JPG" alt="cake1" /></div>
+<div class="itemBox cakes"><img src="cake2.JPG" alt="cake2" /></div>
+<div class="itemBox cakes"><img src="cake3.JPG" alt="cake3" /></div>
+<div class="itemBox cupcakes"><img src="cupcakes1.JPG" alt="cupcakes1" /></div>
+<div class="itemBox cupcakes"><img src="cupcakes2.JPG" alt="cupcakes2"/></div>
+<div class="itemBox doughnuts"><img src="doughnut1.JPG" alt="doughnuts1"/></div>
+<div class="itemBox doughnuts"><img src="doughnut2.JPG" alt="doughnuts2" /></div>
+<div class="itemBox cakes"><img src="cake4.JPG" alt="cake4" /></div>
+<div class="itemBox doughnuts"><img src="doughnut3.JPG" alt="doughnuts3" /></div>
+</div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+$('.list').click(function(){
+const value = $(this).attr('data-filter');
+if(value == 'all'){
+$('.itemBox').show('1000');
+}
+else{
+$('.itemBox').not('.'+value).hide('1000');
+$('.itemBox').filter('.'+value).show('1000');
+        }
+     })
+
+$('.list').click(function(){
+   $(this).addClass('active').siblings().removeClass('active');
+})
+  })
+ </script>
+</body>
+</html>
